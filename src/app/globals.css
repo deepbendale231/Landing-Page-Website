@@ -2,40 +2,148 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --bg-900: #050816;
+  --bg-800: #0b1230;
+  --panel: rgba(14, 24, 56, 0.7);
+  --panel-border: rgba(255, 255, 255, 0.16);
+  --text-main: #f3f7ff;
+  --text-muted: #9fb0dc;
+  --brand-1: #7ab4ff;
+  --brand-2: #9d8bff;
+  --brand-3: #67f0ff;
+}
+
+@layer base {
+  html,
+  body {
+    min-height: 100%;
+  }
+
+  body {
+    background: radial-gradient(circle at 15% -15%, #132862, #050816 42%, #040611 80%);
+    color: var(--text-main);
+    font-family: var(--font-body), sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display), sans-serif;
+  }
+}
+
 @layer components {
+  .bg-shell-dark {
+    background: radial-gradient(circle at 15% -15%, #132862, #050816 42%, #040611 80%);
+  }
+
+  .glass-panel {
+    @apply border bg-white/[0.06] backdrop-blur-xl;
+    border-color: var(--panel-border);
+  }
+
   .btn {
-    @apply px-4 py-2 rounded-lg font-medium inline-flex items-center justify-center tracking-tight;
+    @apply px-4 py-2 rounded-lg font-medium inline-flex items-center justify-center tracking-tight transition-all duration-300;
   }
 
   .btn-primary {
-    @apply bg-black text-white;
+    @apply text-[#0a122e] shadow-[0_12px_38px_rgba(115,173,255,0.45)] hover:-translate-y-0.5;
+    background-image: linear-gradient(90deg, var(--brand-1), #b1c8ff 50%, #94ddff);
   }
 
   .btn-text {
-    @apply text-black bg-transparent;
+    @apply text-white bg-transparent hover:bg-white/10;
   }
 
   .logo-ticker-image {
-    @apply h-8 w-auto;
+    @apply h-8 w-auto opacity-80 grayscale hover:opacity-100 hover:grayscale-0 transition-all;
   }
 
   .tag {
-    @apply text-sm inline-flex border border-[#222]/10 px-3 py-1 rounded-lg tracking-tight;
+    @apply text-xs uppercase inline-flex border px-3 py-1 rounded-full tracking-[0.18em];
+    border-color: rgba(255, 255, 255, 0.2);
+    color: var(--text-muted);
+    background: rgba(255, 255, 255, 0.05);
   }
 
   .section-title {
-    @apply text-center text-3xl md:text-[54px] md:leading-[60px] font-bold tracking-tighter bg-gradient-to-b from-black to-[#001E80] text-transparent bg-clip-text;
+    @apply text-center text-4xl md:text-[58px] md:leading-[1.05] font-bold tracking-tight;
+    background-image: linear-gradient(180deg, #ffffff, #8ca6e6);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
   }
 
   .section-des {
-    @apply text-center text-[22px] leading-[30px] tracking-tight text-[#010D3E];
+    @apply text-center text-base md:text-[20px] leading-[1.7] tracking-tight;
+    color: var(--text-muted);
   }
 
   .section-heading {
-    @apply max-w-[540px] mx-auto;
+    @apply max-w-[720px] mx-auto;
   }
 
   .card {
-    @apply p-10 rounded-3xl border border-[#F1F1F1] shadow-[0_7px_14px_#EAEAEA] max-w-xs w-full;
+    @apply p-6 rounded-2xl max-w-xs w-full transition-transform duration-300 hover:-translate-y-1;
+    border: 1px solid var(--panel-border);
+    background: var(--panel);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.3);
+  }
+
+  .section-shell {
+    @apply relative py-24 md:py-32;
+  }
+
+  .section-shell::before {
+    content: "";
+    @apply pointer-events-none absolute inset-0;
+    background: radial-gradient(circle at center, rgba(108, 173, 255, 0.08), transparent 52%);
+  }
+
+  .grid-overlay {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+    background-size: 34px 34px;
+    mask-image: radial-gradient(circle at center, black 38%, transparent 76%);
+    opacity: 0.35;
+  }
+
+  .soft-divider {
+    @apply h-px w-full;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  }
+
+  .elevated-border {
+    position: relative;
+    border: 1px solid transparent;
+    background:
+      linear-gradient(var(--panel), var(--panel)) padding-box,
+      linear-gradient(120deg, rgba(122, 180, 255, 0.85), rgba(158, 139, 255, 0.6), rgba(103, 240, 255, 0.75)) border-box;
+  }
+
+  .magnetic-link {
+    @apply inline-flex items-center gap-2 text-sm text-[#c7d7ff] transition-all;
+  }
+
+  .magnetic-link:hover {
+    @apply text-white;
+    transform: translateX(2px);
+  }
+
+  .container-tight {
+    @apply max-w-5xl mx-auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
   }
 }

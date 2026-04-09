@@ -7,43 +7,48 @@ import pulseLogo from "@/assets/logo-pulse.png";
 import apexLogo from "@/assets/logo-apex.png";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { Reveal } from "@/components/animation/Reveal";
+
+const logos = [
+  { src: acmeLogo, alt: "Acme logo" },
+  { src: quantamLogo, alt: "Quantum logo" },
+  { src: echoLogo, alt: "Echo logo" },
+  { src: celestialLogo, alt: "Celestial logo" },
+  { src: pulseLogo, alt: "Pulse logo" },
+  { src: apexLogo, alt: "Apex logo" },
+];
 
 export const LogoTicker = () => {
   return (
-    <div className="py-8 md:py-12 bg-white">
+    <section id="customers" className="section-shell pt-0 pb-20 md:pb-24">
       <div className="container">
-        <div
-          className="flex overflow-hidden"
-          style={{ maskImage: "linear-gradient(to right, transparent, black, transparent)" }}
-        >
-          <motion.div
-            className="flex gap-14 flex-none pr-14"
-            animate={{
-              translateX: "-50%",
-            }}
-            transition={{
-              duration: 20,
-              repeat: Infinity,
-              ease: "linear",
-              repeatType: "loop",
-            }}
+        <Reveal>
+          <p className="text-center text-xs uppercase tracking-[0.26em] text-[#8da3d8]">
+            Trusted by teams shipping at startup speed
+          </p>
+        </Reveal>
+        <Reveal delay={0.08}>
+          <div
+            className="mt-6 rounded-2xl border border-white/15 bg-white/[0.04] px-4 py-5 md:px-8 md:py-7 overflow-hidden"
+            style={{ maskImage: "linear-gradient(to right, transparent, black 12%, black 88%, transparent)" }}
           >
-            <Image src={acmeLogo} alt="Acme logo" className="logo-ticker-image" />
-            <Image src={quantamLogo} alt="quantam logo" className="logo-ticker-image" />
-            <Image src={echoLogo} alt="Echo logo" className="logo-ticker-image" />
-            <Image src={celestialLogo} alt="celestial logo" className="logo-ticker-image" />
-            <Image src={pulseLogo} alt="Pulse logo" className="logo-ticker-image" />
-            <Image src={apexLogo} alt="Apex logo" className="logo-ticker-image" />
-
-            <Image src={acmeLogo} alt="Acme logo" className="logo-ticker-image" />
-            <Image src={quantamLogo} alt="quantam logo" className="logo-ticker-image" />
-            <Image src={echoLogo} alt="Echo logo" className="logo-ticker-image" />
-            <Image src={celestialLogo} alt="celestial logo" className="logo-ticker-image" />
-            <Image src={pulseLogo} alt="Pulse logo" className="logo-ticker-image" />
-            <Image src={apexLogo} alt="Apex logo" className="logo-ticker-image" />
-          </motion.div>
-        </div>
+            <motion.div
+              className="flex gap-12 flex-none pr-12"
+              animate={{ translateX: "-50%" }}
+              transition={{ duration: 22, repeat: Infinity, ease: "linear", repeatType: "loop" }}
+            >
+              {[...logos, ...logos].map((logo, index) => (
+                <Image
+                  key={`${logo.alt}-${index}`}
+                  src={logo.src}
+                  alt={logo.alt}
+                  className="logo-ticker-image"
+                />
+              ))}
+            </motion.div>
+          </div>
+        </Reveal>
       </div>
-    </div>
+    </section>
   );
 };

@@ -9,14 +9,16 @@ import { Testimonials } from "@/sections/Testimonials";
 
 export default function Home() {
   return (
-    <div>
+    <div className="relative overflow-x-clip">
       <Header />
-      <Hero />
-      <LogoTicker />
-      <ProductShowcase />
-      <Pricing />
-      <Testimonials />
-      <CallToAction />
+      <main>
+        <Hero />
+        <LogoTicker />
+        <ProductShowcase />
+        <Pricing />
+        <Testimonials />
+        <CallToAction />
+      </main>
       <Footer />
     </div>
   );

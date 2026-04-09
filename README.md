@@ -1,51 +1,69 @@
-# SaaS Landing Page
+# Orbit - Premium SaaS Landing Page
 
-Welcome to the Stunning SaaS Landing Page project! This project is built with React, Next.js, TailwindCSS, and Framer Motion. It aims to provide a visually appealing and highly performant landing page for SaaS products.
+A cinematic, high-conversion SaaS landing page built with Next.js, Tailwind CSS, and Framer Motion.
 
-## Table of Contents
+Designed to feel premium and memorable with layered depth, interactive motion, and production-ready performance.
 
-- [Demo](#demo)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Preview](#preview)
+## Highlights
+- Cinematic dark visual system with ambient glow and depth layers
+- Interactive 3D-style hero composition with parallax motion
+- Premium reusable UI primitives: reveal, spotlight card, glow button, staggered text
+- Fully responsive layout for desktop and mobile
+- Accessibility-aware motion behavior with reduced-motion support
+- Deployment-ready App Router setup with `robots.txt` and `sitemap.xml`
 
-## Demo
-Check out the live demo of the project [here](https://saas-landing-nextjs.vercel.app/).
+## Tech Stack
+- Next.js 14 (App Router)
+- React 18
+- Tailwind CSS
+- Framer Motion
+- TypeScript
 
-## Features
-- Responsive design
-- Smooth animations with Framer Motion
-- Modern UI with TailwindCSS
-- Server-side rendering with Next.js
-- Easy to customize
-
-## Technologies Used
-- **React**: A JavaScript library for building user interfaces
-- **Next.js**: A React framework with server-side rendering capabilities
-- **TailwindCSS**: A utility-first CSS framework for rapid UI development
-- **Framer Motion**: A library for creating animations in React
-
-## Installation
-To get started with this project, clone the repository and install the dependencies:
-
+## Local Development
 ```bash
 git clone https://github.com/harshxraj/saas-landing-nextjs.git
 cd saas-landing-nextjs
 npm install
-```
-
-## Usage
-To start the development server, run:
-
-```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser to see the project.
+Open http://localhost:3000
 
-## Preview
-![image](https://github.com/user-attachments/assets/85e0357d-65a3-45a5-94fb-ead789a718e2)
+## Production Build
+```bash
+npm run lint
+npm run build
+npm run start
+```
+
+## Deploy ASAP
+
+### Vercel (fastest)
+1. Push this repository to GitHub.
+2. Import the repo in Vercel.
+3. Keep default settings (`next build`).
+4. Deploy.
+
+### Other Node hosts
+Use:
+- Build command: `npm run build`
+- Start command: `npm run start`
+- Node version: 18+
+
+## Project Structure (main)
+```text
+src/
+	app/
+	components/
+		animation/
+		ui/
+	hooks/
+	sections/
+```
+
+## Status
+- Lint: passing
+- Production build: passing
+- Ready to deploy
 
 
