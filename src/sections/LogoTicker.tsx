@@ -23,13 +23,13 @@ export const LogoTicker = () => {
     <section id="customers" className="section-shell pt-0 pb-20 md:pb-24">
       <div className="container">
         <Reveal>
-          <p className="text-center text-xs uppercase tracking-[0.26em] text-[#8da3d8]">
-            Trusted by teams shipping at startup speed
+          <p className="text-center text-xs uppercase tracking-[0.26em] text-[#6c7f9c]">
+            Trusted by teams shipping with craft and precision
           </p>
         </Reveal>
         <Reveal delay={0.08}>
           <div
-            className="mt-6 rounded-2xl border border-white/15 bg-white/[0.04] px-4 py-5 md:px-8 md:py-7 overflow-hidden"
+            className="designer-panel mt-6 overflow-hidden rounded-2xl border border-slate-900/10 bg-white/84 px-4 py-5 md:px-8 md:py-7"
             style={{ maskImage: "linear-gradient(to right, transparent, black 12%, black 88%, transparent)" }}
           >
             <motion.div
@@ -40,6 +40,20 @@ export const LogoTicker = () => {
               {[...logos, ...logos].map((logo, index) => (
                 <Image
                   key={`${logo.alt}-${index}`}
+                  src={logo.src}
+                  alt={logo.alt}
+                  className="logo-ticker-image"
+                />
+              ))}
+            </motion.div>
+            <motion.div
+              className="mt-6 flex gap-12 flex-none pr-12 opacity-70"
+              animate={{ translateX: "0%" }}
+              transition={{ duration: 26, repeat: Infinity, ease: "linear", repeatType: "loop" }}
+            >
+              {[...logos, ...logos].reverse().map((logo, index) => (
+                <Image
+                  key={`${logo.alt}-rev-${index}`}
                   src={logo.src}
                   alt={logo.alt}
                   className="logo-ticker-image"

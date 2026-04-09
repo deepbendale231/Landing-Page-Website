@@ -21,8 +21,9 @@ export const CallToAction = () => {
   return (
     <section id="updates" ref={sectionRef} className="section-shell overflow-x-clip">
       <div className="container">
-        <div className="relative overflow-hidden rounded-[32px] border border-white/15 bg-[#0b1434]/80 px-6 py-12 md:px-12 md:py-16 backdrop-blur-xl">
-          <div className="absolute inset-0 opacity-65 bg-[radial-gradient(circle_at_50%_0%,rgba(126,177,255,0.28),transparent_50%)]" />
+        <div className="relative overflow-hidden rounded-[32px] border border-slate-900/10 bg-white/[0.88] px-6 py-12 md:px-12 md:py-16 backdrop-blur-xl designer-panel">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(0,113,227,0.16),transparent_54%)] opacity-60" />
+          <div className="absolute inset-0 opacity-18 [background-image:linear-gradient(rgba(15,23,42,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,0.08)_1px,transparent_1px)] [background-size:38px_38px]" />
           <motion.div
             className="absolute -left-32 top-5 hidden md:block"
             style={{ translateY }}
@@ -38,12 +39,13 @@ export const CallToAction = () => {
 
           <div className="relative z-10 mx-auto max-w-3xl text-center">
             <Reveal>
-              <h2 className="section-title">Ready to move from busywork to momentum?</h2>
+              <p className="section-kicker">Get started</p>
+              <h2 className="section-title mt-3 text-gradient-lux">Ready to turn planning into momentum?</h2>
             </Reveal>
             <Reveal delay={0.08}>
               <p className="section-des mt-5">
-                Join high-performing teams running mission-critical launches on Orbit and see meaningful impact
-                in your first week.
+                Join high-performing teams running mission-critical launches on Orbit and see measurable impact in
+                your first week.
               </p>
             </Reveal>
 

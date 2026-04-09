@@ -15,55 +15,55 @@ import { motion } from "framer-motion";
 
 const testimonials = [
   {
-    text: "As a seasoned designer always on the lookout for innovative tools, Framer.com instantly grabbed my attention.",
+    text: "Orbit gave our team a calmer way to plan launches. The clarity in every view is outstanding.",
     imageSrc: avatar1.src,
     name: "Jamie Rivera",
     username: "@jamietechguru00",
   },
   {
-    text: "Our team's productivity has skyrocketed since we started using this tool. ",
+    text: "Our execution speed improved within the first sprint, without adding process overhead.",
     imageSrc: avatar2.src,
     name: "Josh Smith",
     username: "@jjsmith",
   },
   {
-    text: "This app has completely transformed how I manage my projects and deadlines.",
+    text: "This platform transformed how we manage priorities, ownership, and delivery timelines.",
     imageSrc: avatar3.src,
     name: "Morgan Lee",
     username: "@morganleewhiz",
   },
   {
-    text: "I was amazed at how quickly we were able to integrate this app into our workflow.",
+    text: "Integration took less than a day, and everyone understood the workflow immediately.",
     imageSrc: avatar4.src,
     name: "Casey Jordan",
     username: "@caseyj",
   },
   {
-    text: "Planning and executing events has never been easier. This app helps me keep track of all the moving parts, ensuring nothing slips through the cracks.",
+    text: "From roadmap to release, Orbit keeps every moving part visible so nothing slips through the cracks.",
     imageSrc: avatar5.src,
     name: "Taylor Kim",
     username: "@taylorkimm",
   },
   {
-    text: "The customizability and integration capabilities of this app are top-notch.",
+    text: "The flexibility and integrations are excellent, but the real value is how calm the interface feels.",
     imageSrc: avatar6.src,
     name: "Riley Smith",
     username: "@rileysmith1",
   },
   {
-    text: "Adopting this app for our team has streamlined our project management and improved communication across the board.",
+    text: "Adopting Orbit streamlined planning and improved communication between product and engineering.",
     imageSrc: avatar7.src,
     name: "Jordan Patels",
     username: "@jpatelsdesign",
   },
   {
-    text: "With this app, we can easily assign tasks, track progress, and manage documents all in one place.",
+    text: "We can assign work, track progress, and review outcomes in one place with zero friction.",
     imageSrc: avatar8.src,
     name: "Sam Dawson",
     username: "@dawsontechtips",
   },
   {
-    text: "Its user-friendly interface and robust features support our diverse needs.",
+    text: "The interface is intuitive, elegant, and robust enough for our cross-functional teams.",
     imageSrc: avatar9.src,
     name: "Casey Harper",
     username: "@casey09",
@@ -82,27 +82,35 @@ export const Testimonials = () => {
           </Reveal>
 
           <Reveal delay={0.08}>
-            <h2 className="section-title mt-5">Loved by teams shipping category-defining products</h2>
+            <h2 className="section-title mt-5 text-gradient-lux">Trusted by teams shipping category-defining products</h2>
           </Reveal>
           <Reveal delay={0.16}>
             <p className="section-des mt-5">
-              From intuitive workflows to strategic visibility, Orbit becomes the system product teams rely on
-              every day.
+              From intuitive workflows to strategic visibility, Orbit becomes the system teams rely on every day.
             </p>
           </Reveal>
         </div>
 
-        <div className="grid gap-5 mt-12 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-5 mt-12 md:grid-cols-2 lg:grid-cols-6 auto-rows-fr">
           {testimonials.map(({ text, imageSrc, name, username }, index) => (
             <Reveal key={username} delay={index * 0.05}>
-              <motion.div whileHover={{ y: -4 }} transition={{ duration: 0.2 }}>
-                <SpotlightCard className="h-full">
-                  <p className="text-[0.98rem] leading-7 text-[#c4d4f7]">&ldquo;{text}&rdquo;</p>
+              <motion.div whileHover={{ y: -3 }} transition={{ duration: 0.22 }}>
+                <SpotlightCard
+                  className={
+                    "h-full designer-panel " +
+                    (index === 0 || index === 4
+                      ? "lg:col-span-3"
+                      : index === 2 || index === 7
+                        ? "lg:col-span-2"
+                        : "lg:col-span-1")
+                  }
+                >
+                  <p className="text-[0.98rem] leading-7 text-[#4f627f]">&ldquo;{text}&rdquo;</p>
                   <div className="flex items-center gap-3 mt-6">
                     <Image width={44} height={44} src={imageSrc} alt={name} className="h-11 w-11 rounded-full" />
                     <div className="flex flex-col">
-                      <div className="font-medium tracking-tight leading-5 text-white">{name}</div>
-                      <div className="leading-5 tracking-tight text-[#90a6db]">{username}</div>
+                      <div className="font-medium tracking-tight leading-5 text-slate-900">{name}</div>
+                      <div className="leading-5 tracking-tight text-[#5f7594]">{username}</div>
                     </div>
                   </div>
                 </SpotlightCard>

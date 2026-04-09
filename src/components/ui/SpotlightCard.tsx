@@ -12,7 +12,7 @@ type SpotlightCardProps = HTMLMotionProps<"div"> & {
 export function SpotlightCard({ children, className, ...props }: SpotlightCardProps) {
   const mouseX = useMotionValue(-999);
   const mouseY = useMotionValue(-999);
-  const spotlight = useMotionTemplate`radial-gradient(260px at ${mouseX}px ${mouseY}px, rgba(122, 173, 255, 0.2), transparent 70%)`;
+  const spotlight = useMotionTemplate`radial-gradient(260px at ${mouseX}px ${mouseY}px, rgba(0, 113, 227, 0.09), transparent 72%)`;
 
   return (
     <motion.div
@@ -26,7 +26,7 @@ export function SpotlightCard({ children, className, ...props }: SpotlightCardPr
         mouseY.set(-999);
       }}
       className={twMerge(
-        "group relative overflow-hidden rounded-2xl border border-white/15 bg-[#0B1434]/80 p-6 shadow-[0_24px_50px_rgba(0,0,0,0.35)] backdrop-blur-md",
+        "group relative overflow-hidden rounded-2xl border border-slate-900/10 bg-white/[0.9] p-6 shadow-[0_20px_38px_rgba(17,37,64,0.1)] backdrop-blur-md",
         className
       )}
       {...props}

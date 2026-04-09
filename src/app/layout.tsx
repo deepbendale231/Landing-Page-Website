@@ -1,37 +1,37 @@
 import type { Metadata } from "next";
-import { DM_Sans, Space_Grotesk } from "next/font/google";
+import { Plus_Jakarta_Sans, Sora } from "next/font/google";
 import "./globals.css";
 import { twMerge } from "tailwind-merge";
 
-const dmSans = DM_Sans({ subsets: ["latin"], variable: "--font-body" });
-const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-display" });
+const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-body" });
+const sora = Sora({ subsets: ["latin"], variable: "--font-display" });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://saas-landing-nextjs.vercel.app"),
   title: {
-    default: "Orbit - SaaS Growth Platform",
+    default: "Orbit - Product Platform",
     template: "%s | Orbit",
   },
   description:
-    "Orbit helps teams ship faster with workflow automation, AI insights, and a premium project intelligence dashboard.",
+    "Orbit helps teams design, plan, and ship with clarity through elegant workflows and real-time product intelligence.",
   applicationName: "Orbit",
-  keywords: ["saas", "next.js", "landing page", "automation", "project management"],
+  keywords: ["saas", "product platform", "next.js", "automation", "project management"],
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Orbit - SaaS Growth Platform",
+    title: "Orbit - Product Platform",
     description:
-      "A premium SaaS landing page with fast performance, immersive visuals, and conversion-first UX.",
+      "A refined product platform landing page with elegant motion, fast performance, and conversion-focused UX.",
     url: "https://saas-landing-nextjs.vercel.app",
     siteName: "Orbit",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Orbit - SaaS Growth Platform",
+    title: "Orbit - Product Platform",
     description:
-      "A premium SaaS landing page with fast performance, immersive visuals, and conversion-first UX.",
+      "A refined product platform landing page with elegant motion, fast performance, and conversion-focused UX.",
   },
 };
 
@@ -44,10 +44,10 @@ export default function RootLayout({
     <html lang="en" className="relative scroll-smooth">
       <body
         className={twMerge(
-          dmSans.className,
-          dmSans.variable,
-          spaceGrotesk.variable,
-          "bg-shell-dark text-[#F3F7FF] antialiased selection:bg-[#7ab4ff]/30 selection:text-[#f4f8ff]"
+          jakarta.className,
+          jakarta.variable,
+          sora.variable,
+          "bg-shell-light text-[#101828] antialiased selection:bg-[#0071e3]/20 selection:text-[#0f172a]"
         )}
       >
         {children}
